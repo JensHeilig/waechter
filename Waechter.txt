@@ -1,0 +1,66 @@
+Configuration	Waechter
+STM32CubeMX 	4.18.0
+Date	01/04/2017
+MCU	STM32F103C6Tx
+
+
+
+PERIPHERALS	MODES	FUNCTIONS	PINS
+ADC1	IN1	ADC1_IN1	PA1
+ADC1	IN2	ADC1_IN2	PA2
+SPI1	Full-Duplex Master	SPI1_MISO	PA6
+SPI1	Full-Duplex Master	SPI1_MOSI	PA7
+SPI1	Full-Duplex Master	SPI1_SCK	PA5
+SPI1	Hardware NSS Output Signal	SPI1_NSS	PA4
+SYS	JTAG (4 pins)	SYS_JTCK-SWCLK	PA14
+SYS	JTAG (4 pins)	SYS_JTDI	PA15
+SYS	JTAG (4 pins)	SYS_JTDO-TRACESWO	PB3
+SYS	JTAG (4 pins)	SYS_JTMS-SWDIO	PA13
+SYS	SysTick	SYS_VS_Systick	VP_SYS_VS_Systick
+
+
+
+Pin Nb	PINs	FUNCTIONs	LABELs
+2	PC13-TAMPER-RTC	GPIO_Output	LED
+10	PA0-WKUP	GPIO_EXTI0	RFM12_IRQ
+11	PA1	ADC1_IN1	AIN1
+12	PA2	ADC1_IN2	AIN2
+13	PA3	GPIO_Input	RFM12_FSK_DATA
+14	PA4	SPI1_NSS	nSEL
+15	PA5	SPI1_SCK	SCK
+16	PA6	SPI1_MISO	MISO
+17	PA7	SPI1_MOSI	MOSI
+21	PB10	GPIO_Input	DIN1
+25	PB12	GPIO_EXTI12	HALL_IN
+34	PA13	SYS_JTMS-SWDIO	
+37	PA14	SYS_JTCK-SWCLK	
+38	PA15	SYS_JTDI	
+39	PB3	SYS_JTDO-TRACESWO	
+
+
+
+SOFTWARE PROJECT
+
+Project Settings : 
+Project Name : Waechter
+Project Folder : /Users/heilig/Documents/Programmieren/Waechter/CubeMXGeneratedSource/Waechter
+Toolchain / IDE : MDK-ARM V5
+Firmware Package Name and Version : STM32Cube FW_F1 V1.4.0
+
+
+Code Generation Settings : 
+STM32Cube Firmware Library Package : Copy only the necessary library files
+Generate peripheral initialization as a pair of '.c/.h' files per peripheral : No
+Backup previously generated files when re-generating : No
+Delete previously generated files when not re-generated : Yes
+Set all free pins as analog (to optimize the power consumption) : No
+
+
+Toolchains Settings : 
+Compiler Optimizations : Balanced Size/Speed
+
+
+
+
+
+
