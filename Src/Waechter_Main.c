@@ -29,18 +29,27 @@ void RFM12_Sendword(uint16_t data)
   HAL_SPI_Transmit(&hspi1, (uint8_t *) &data, 2, 100); /// @TODO Big-Endian/Little-Endian Conversion necessary?
 }
 
- 
 /**
  * Initialize the Waechter routines
  *
  */
-void  Waechter_Init(void)
+void Waechter_Init(void)
 {
   __HAL_SPI_ENABLE(&hspi1);
   RFMInit();
 }
 
-void  Waechter_Main(void)
+void Waechter_Main(void)
 {
-  ;
+//  HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin) ;
+}
+
+void HAL_SYSTICK_Callback(void)
+{
+	static unsigned int cnt = 0;
+  if (cnt == 100)
+  {
+    cnt = 0;
+    HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
+  }
 }
