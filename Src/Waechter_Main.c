@@ -46,11 +46,12 @@ void Waechter_Main(void)
 
 void HAL_SYSTICK_Callback(void)
 {
-	static unsigned int cnt = 0;
-  if (cnt == 100)
+  const unsigned int period_ms = 100;
+	static unsigned int cnt = period_ms;
+  if (cnt == 0)
   {
-    cnt = 0;
+    cnt = period_ms;
     HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
   }
-	cnt++;
+	cnt--;
 }
