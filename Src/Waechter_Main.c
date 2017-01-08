@@ -52,4 +52,5 @@ void HAL_SYSTICK_Callback(void)
     cnt = 0;
     HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
   }
+	cnt++;
 }
