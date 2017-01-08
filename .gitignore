@@ -1,0 +1,6 @@
+DebugConfig
+/MDK-ARM/RTE
+Waechter
+/MDK-ARM/RTE/_Waechter/RTE_Components.h
+/MDK-ARM/EventRecorderStub.scvd
+/MDK-ARM/*.lst
