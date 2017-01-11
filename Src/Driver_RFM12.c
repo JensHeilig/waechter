@@ -192,7 +192,7 @@
 *******************************************************************************/
 
   uint16_t 	SPIPutGet16 (SPI_TypeDef* SPIx , uint16_t wrd);
-  uint16_t 	CRCalc(char bu[], uint16_t istrt, uint16_t iend);
+  uint16_t 	CRCalc(uint8_t bu[], uint16_t istrt, uint16_t iend);
   uint8_t	 	DecHam(uint8_t hambyt);
   void     	delay_us(uint32_t dele);
   void     	delay_ms(uint32_t delms);
@@ -207,8 +207,8 @@
   char Txbu[BUMAX];					   // Put buffer
   char Rxbu[BUMAX];					   // Get buffer
 
-  char 	 Ftxbu[BUMAX];				   // TX buffer
-  char 	 Frxbu[BUMAX];				   // RX buffer
+  uint8_t 	 Ftxbu[BUMAX];				   // TX buffer
+  uint8_t 	 Frxbu[BUMAX];				   // RX buffer
   uint16_t Fmod;					   // modus, 1=init, 2=get, 3=get ready, 4=put, 5=put ready
   uint16_t Fget;					   // status get, 1=req., 2=run, 3=OK, 9=err
   uint16_t Fput;					   // status put, 1=req., 2=run, 3=OK, 9=err
@@ -217,7 +217,7 @@
   uint16_t Flen;					   // msg length
   uint16_t Fint;					   // tx int mode, 1=header, 2=payload, 3=trailer
   uint16_t Fham;					   // Halfbyte indicator, 1=hi, 2=lo for Hamming
-  char     Fhi,Flo;					   // Halfbytes for get Int
+  uint8_t     Fhi,Flo;					   // Halfbytes for get Int
 
   uint16_t Fhead[5]  = {0xB8AA,0xB8AA,0xB8AA,0xB82D,0xB8D4};
   char     Fhval[16] = {0x15,0x02,0x49,0x5E,0x64,0x73,0x38,0x2F,
@@ -529,7 +529,7 @@ void RFMIntTX(void)
 /*******************************************************************************
  * CRCalc: Calculates CRC16 of bu[] from start istrt till end iend
  ******************************************************************************/
-uint16_t CRCalc(char bu[], uint16_t istrt,uint16_t iend)
+uint16_t CRCalc(uint8_t bu[], uint16_t istrt,uint16_t iend)
 {
 	uint16_t poly=0xA001;
 	uint16_t crc,n,i;
